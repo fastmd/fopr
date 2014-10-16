@@ -1,0 +1,25 @@
+<div class="panel callout radius">
+<div class="field">
+	<div class="panel callout radius">
+    <center><h3><%= " 2.Лица подверженные риску" %></h3></center><br/>
+    <% @user.resps.each do |resp| %>
+  		<p>
+    		<strong>Name:</strong>
+    		<%= resp.name %>
+  		</p>
+ 
+	<% end %>
+     	
+ 		<strong> Добавить респондента </strong>
+			<%= form_for([@user, @user.resps.build]) do |ff| %>
+  				<p>
+    				<%= ff.text_field :name %>
+  				</p>
+    			<%= ff.submit "Добавить респондента" %>
+  			<% end %>
+     	</div>
+  
+  </div>
+  <%= link_to "Далее", next_wizard_path %>
+  
+  </div>

@@ -1,0 +1,37 @@
+<div class="panel callout radius">
+
+<h1>Оценка вероятности и последствий рисков</h1>
+<%= form_for :riskizations, :url => {:action => 'update_rzs'} do %>
+	<table>
+		<tr>
+		<th>№</th>
+		<th>Наименование риска</th>
+		<th>Вероятность</th>
+		<th>Последствия</th>
+		</tr>
+		<% i=0%>
+			<% @user.riskizations.each do |riskization| %>
+			<%= fields_for "riskization[]", riskization do |riskization_fields| %>
+			<tr>
+				<% i=i+1%>
+				<td><%= i %></td>
+
+				<% @u = @user.risks.find(riskization.risk_id) %>
+    			<td><%= @u.risk %></td>
+
+				<td><%= riskization_fields.select(:rver,[["Маловероятно",1],["Очень редко",2],["Редко",3],["Вероятно",4],["Очень вероятно",5]]) %></td>
+				<td><%= riskization_fields.select(:rposl,[["Легкие",1],["Умеренные",2],["Серьезные",3],["Очень серьезные",4],["Смертельно",5]]) %></td>
+				<% session[:st] = 1 %> 
+				
+			</tr>
+			<% end %>
+			<% end %>
+	</table>
+	<%= submit_tag 'Continue' %>
+	<%= link_to "skip this step", next_wizard_path %>
+	<%= button_to "New", action: "new" %>
+<% end %>
+
+</div>
+
+

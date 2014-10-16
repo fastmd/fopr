@@ -1,0 +1,45 @@
+<div class="panel callout radius">
+
+<h1>Мероприятия по предотвращению рисков</h1>
+
+<%= form_for :riskizations, :url => {:action => 'update_rzs'} do %>
+	<table>
+		<tr>
+		<th>№</th>
+		<th>Наименование риска</th>
+		<th>Мероприятия по устранению</th>
+		</tr>
+		<% i=0%>
+			<% @user.riskizations.each do |riskization| %>
+			<%= fields_for "riskization[]", riskization do |riskization_fields| %>
+			<tr>
+				<td><%= i=i+1 %></td>
+				<% @u = @user.risks.find(riskization.risk_id) %>
+    			<td><%= @u.risk %></td>
+    			
+    		    <%
+    		    ind1 = riskization.rver.to_i + riskization.rposl.to_i
+    	    	case ind1
+				   when 1 .. 3 %>
+    					<td> <%= riskization_fields.text_area :mpred , :cols => 40, :rows => 40, :value => "Риск мал и управляем. Специальные меры предупреждения не требуются."%> </td>
+				<% when 4 .. 5 %>
+	    				<td> <%= riskization_fields.text_area :mpred , :cols => 40, :rows => 40,:value => "Специальные меры предупреждения не требуются. Риск нужно контролировать."%> </td>
+				<% else %>
+    					 <td> <%= riskization_fields.text_area :mpred, :cols => 40, :rows => 40 %> </td> 
+    			<% end %>	
+    	 						
+				<% session[:st] = 2 %>
+			</tr>
+			<% end %>
+			<% end %>
+	</table>
+	<%= submit_tag 'Finish' %>
+	
+<% end %>
+
+</div>
+
+
+
+
+
