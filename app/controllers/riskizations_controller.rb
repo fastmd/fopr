@@ -1,4 +1,5 @@
 class RiskizationsController < ApplicationController
+validates :mpred, :presence => true, :on => :update
  
  attr_accessible :rver, :rposl
  
