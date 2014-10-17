@@ -3,16 +3,16 @@
 <div class="row"> 
 
 <div class="panel">
-<h1>Welcome</h1>
+<center><h1>Картотека</h1></center>
 
 <% if current_user.nil? %>
-  <p>Currently not signed in. <%= link_to "Sign Up", new_user_path %></p>
+  <p><%= link_to "Вход в интерфейс", new_user_path %></p>
 <% else %>
-  <p>Currently signed in as:</p>
-  <p><b>Email:</b> <%= current_user.email %></p>
-  <p><b>Name:</b> <%= current_user.name %></p>
+  <p><b>Вход осуществлен от имени :</b></p>
+  <p><b>Электронная почта:</b> <%= current_user.email %></p>
+  <p><b>Фио:</b> <%= current_user.name %></p>
   <%= simple_format current_user.bio %>
-  <p><%= link_to "Sign Up Again", new_user_path %></p>
+  <p><%= link_to "Войти повторно", new_user_path %></p>
 <% end %>
 
 
@@ -23,12 +23,12 @@
   <tr>
   	<th>№ </th>
   	<th> Рабочее место / пост</th>
-    <th> Name</th>
-    <th> Date of birth</th>
-    <th> E-mail</th>
+    <th> Фио</th>
+    <th> Дата рождения</th>
+    <th> Электронная почта</th>
     <th> Действия</th>
     <th> Действия</th>
-    <th> Действияl</th>
+    <th> Действия</th>
     
     
   </tr>

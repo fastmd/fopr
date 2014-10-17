@@ -1,6 +1,6 @@
 class UserStepsController < ApplicationController
   include Wicked::Wizard
-  steps :personal, :social, :psocial, :social1, :social2, :social3, :social4,
+  steps :personal, :social, :psocial, :social1, :social2, :social3, :social4
   
   def show
     @risk = Risk.all

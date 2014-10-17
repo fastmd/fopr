@@ -3,9 +3,7 @@
 	<center>
 	 	по оценке профессиональных рисков
 	</center>
-	<center>
-	 	(при проведении .............. работ)
-	</center>
+	
 	<br><br>
 	
 <p>
@@ -14,6 +12,13 @@
 </p>
 
 <div class="panel">
+	    <div>
+        	<strong>Рабочее место:</strong>
+        </div>
+      <div>	
+       	<%= @user.rabm%>
+      </div> 
+	 <br>
   	 <div>
        <strong>Описание рабочих действий и зоны выполнения работ:</strong>
      </div>   
@@ -24,22 +29,9 @@
   <br>
    <div>
         <strong>	Лица подвергающиеся риску: </strong><br>
-        	
-         	<p>Лица подверженные риску</p>
-		<table style="width:100%">
-  				<tr>
-    				<td>Имя</td>
-    				
-  				</tr>
-  				<tr>
-  				<td>	
 				<% @user.resps.each do |resp| %>
-    				<%= resp.name %>,
+    				<%= resp.name %>, 
     			<% end %>
-    			</td>		
-  				</tr>
-  				
-			</table>
     </div>    
     <br> 
 		<div>
@@ -49,13 +41,7 @@
       </div>
       
     <br>
-		<div>
-        	<strong>Рабочее место:</strong>
-        </div>
-      <div>	
-       	<%= @user.rabm%>
-      </div> 	
-	<br>		
+					
  	   <div>
         	<strong>Реальное состояние условий труда (выявленные нарушения требований стандартов)</strong>
         </div>	
@@ -141,5 +127,13 @@
 	  </tbody>
  	</table>
  </div>	
+ 
+ <div>
+        <strong>	Оценку выполнил : </strong><br>
+				<% @user.resps.each do |resp| %>
+    				<%= resp.name %>   ____________________________
+    				<br> 
+    			<% end %>
+    </div>
  
 </div>

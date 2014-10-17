@@ -1,4 +1,5 @@
-<h1>Sign Up</h1>
+<div class="panel callout radius">
+<center><h1>Форма регистрации</center></h1>
 
 <%= form_for @user do |f| %>
   <% if @user.errors.any? %>
@@ -13,19 +14,21 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :email %><br />
+    <center><%= f.label :"Адрес электронной почты" %></center><br>
     <%= f.text_field :email %>
   </div>
   <div class="field">
-    <%= f.label :password %><br />
+    <center><%= f.label :"Пароль" %></center><br>
     <%= f.password_field :password %>
   </div>
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <center><%= f.label :"потверждение пароля" %></center><br>
     <%= f.password_field :password_confirmation %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign Up" %>
+    <%= f.submit "Зарегестрироватся" %>
   </div>
 <% end %>
+
+</div>

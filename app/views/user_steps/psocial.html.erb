@@ -2,23 +2,22 @@
 <div class="field">
 	<div class="panel callout radius">
     <center><h3><%= " 2.Лица подверженные риску" %></h3></center><br/>
+    <div class="panel callout radius">
     <% @user.resps.each do |resp| %>
   		<p>
-    		<strong>Name:</strong>
+    		<strong>ФИО:</strong>
     		<%= resp.name %>
   		</p>
  
 	<% end %>
-     	
- 		<strong> Добавить респондента </strong>
+	</div>
+<div class="panel callout radius">     	
 			<%= form_for([@user, @user.resps.build]) do |ff| %>
-  				<p>
-    				<%= ff.text_field :name %>
-  				</p>
+  				<p> <%= ff.text_field :name %> </p>
     			<%= ff.submit "Добавить респондента" %>
   			<% end %>
      	</div>
-  
+  </div>
   </div>
   <%= link_to "Далее", next_wizard_path %>
   

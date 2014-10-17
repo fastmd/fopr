@@ -16,14 +16,14 @@
 
 <%= render layout: 'form' do |f| %>
   
-    <%= f.label :"ФИО" %><br/>
+    <b><%= f.label :"ФИО" %></b><br>
     <%= f.text_field :name %>
   
-    <%= f.label :"Дата рождения" %><br />
+    <b><%= f.label :"Дата рождения" %></b><br>
     
     <%= f.text_field :date_of_birth,:value => Time.now.strftime('%d.%m.%Y'),:id => "modelname" %>
     
-    <%= f.label :"Электронная почта" %><br />
+    <b><%= f.label :"Электронная почта" %></b><br>
     <%= f.text_area :email, rows: 5 %>
   
 <% end %>
