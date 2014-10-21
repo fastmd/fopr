@@ -1,8 +1,107 @@
 <div class="panel callout radius">
+<center><h1>IV. Оценка вероятности и последствий рисков</h1></center>
+<center><p>1: Отображаются выбранные оценщиком опасности (выявленные риски), отмеченные в п.3 программы</p></center>
 
-<h1>Оценка вероятности и последствий рисков</h1>
+<div class="row">
+  <div class="medium-6 medium-push-6 columns">
+  	<center><a href="#" data-reveal-id="myModal" class="radius button">Подсказка по вероятности возникновения риска&hellip;</a></center> 
+<div id="myModal" class="reveal-modal" data-reveal>
+	
+	 
+<div class="panel callout radius">
+<div class="row">
+  <div class="small-6 large-centered columns"><h3>Признаки вероятности риска</h3></div>
+</div>
+<br>
+<div class="row" style="color:red;">
+  <div class="large-1 columns"><strong>Очень вероятно</strong></div>
+  <div class="large-10 large-offset-1 columns"><p>Событие, происходящее регулярно, более одного раза в течение рабочего дня (смены).</p></div>
+</div>
+<br>
+
+<div class="row">
+  <div class="large-1 columns" style="color:orange;"><strong>Вероятно</strong></div>
+  <div class="large-10 large-offset-1 columns"><p>Событие, происходящее каждые 10 дней.</p></div>
+</div>
+<br>
+
+<div class="row">
+  <div class="large-1 columns" style="color:yellow;"><strong>Редко</strong></div>
+  <div class="large-10 large-offset-1 columns"><p>Периодичность наблюдения события не более одного раза в 6 месяцев.</p></div>
+</div>
+<br>
+
+<div class="row">
+  <div class="large-1 columns" style="color:green;"><strong>Очень редко</strong></div>
+  <div class="large-10 large-offset-1 columns"><p>Событие, происходящее на предприятии не менее 1 раза в год.</p></div>
+</div>
+<br>
+
+<div class="row">
+  <div class="large-1 columns" style="color: #66FFFF"><strong>Маловероятно</strong></div>
+  <div class="large-10 large-offset-1 columns"><p>Событие, происходящее только при исключительном стечении обстоятельств. 
+  	Опасность появляется менее 1 раза в пять лет.</p></div>
+</div>
+</div> 
+	<a class="close-reveal-modal">&#215;</a>
+	 </div>
+
+  </div>
+  
+  <div class="row">
+  <div class="medium-6 medium-push-6 columns">
+  	<center><a href="#" data-reveal-id="myModal1" class="radius button">Подсказка по последствиям риска&hellip;</a></center> 
+<div id="myModal1" class="reveal-modal" data-reveal>
+	
+<div class="panel callout radius">
+<div class="row">
+  <div class="small-6 large-centered columns"><h3>Признаки серьезности последствий риска</h3></div>
+</div>
+<br>
+<div class="row" style="color:red;">
+  <div class="large-1 columns"><strong>Смертельно</strong></div>
+  <div class="large-10 large-offset-1 columns"><p>Следствием опасности является смертельным несчастный случай или профессиональным 
+  	заболеванием (по результатам анализа произошедших несчастных случаев).</p></div>
+</div>
+<br>
+
+<div class="row">
+  <div class="large-1 columns" style="color:orange;"><strong>Очень серьезные</strong></div>
+  <div class="large-10 large-offset-1 columns"><p>Результатом несчастного случая возможна инвалидность или временная нетрудоспособность,
+  	 превышающая 90 дней и более.</p></div>
+</div>
+<br>
+
+<div class="row">
+  <div class="large-1 columns" style="color:yellow;"><strong>Серьезные</strong></div>
+  <div class="large-10 large-offset-1 columns"><p>Событие, при котором возможны значительные и длительные последствия.
+  	 Предполагает обращение за медицинской помощью. Вызывает от 3 до 30 дней отсутствие на работе.</p></div>
+</div>
+<br>
+
+<div class="row">
+  <div class="large-1 columns" style="color:green;"><strong>Умеренные</strong></div>
+  <div class="large-10 large-offset-1 columns"><p>Событие вызывает кратковременное заболевание или нарушение здоровья, 
+  	которое не предполагает обращение за медицинской помощью. Возможно отсутствие на работе не более трех дней.</p></div>
+</div>
+<br>
+
+<div class="row">
+  <div class="large-1 columns" style="color: #66FFFF"><strong>Легкие</strong></div>
+  <div class="large-10 large-offset-1 columns"><p>Травм и профессиональных заболеваний 
+  	не предполагается. Нет необходимости обращения за первой доврачебной помощью.</p></div>
+</div>
+</div> 
+	<a class="close-reveal-modal">&#215;</a>
+	 </div>
+
+  </div>
+</div>
+
+
+
 <%= form_for :riskizations, :url => {:action => 'update_rzs'} do %>
-	<table>
+	<center><table>
 		<tr>
 		<th>№</th>
 		<th>Наименование риска</th>
@@ -26,8 +125,8 @@
 			</tr>
 			<% end %>
 			<% end %>
-	</table>
-	<%= submit_tag 'Далее' %>
+	</table></center>
+	<center><%= submit_tag 'Далее' , :class => "button"%></center>
 <% end %>
 
 </div>

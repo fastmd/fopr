@@ -1,10 +1,19 @@
+<style type="text/css">
+input.css_class
+{
+width: 30px;
+height: 30px;
+}
+</style> 
+
 <div class="panel callout radius">
 
 
 <%= render layout: 'form' do |f| %>
-  <h1>Реестр рисков</h1>
-
-
+  <center><h1>III.Реестр рисков</h1></center>
+<center><p>1:Факторы, вызывающие опасность травмирования или вред здоровью работника (-ов) при 
+	выполнении перечисленных конкретных рабочих действий, применяемого рабочего оборудования,
+	 приспособлений и материалов и предполагающие необходимость оценки степени риска</p></center>
 
 <br>
 <table id="table1">
@@ -28,7 +37,7 @@
       <td><%= risk.rtype %></td>	
       <td><%= risk.risk %></td>
       <td><%= risk.result %></td>
-      <td><%= check_box_tag "user[risk_ids][]", risk.id, @user.risk_ids.include?(risk.id), id: dom_id(risk) %> </td>
+      <td><%= check_box_tag "user[risk_ids][]", risk.id, @user.risk_ids.include?(risk.id), id: dom_id(risk),:class => "css_class" %> </td>
       <% label_tag dom_id(risk), risk.risk %>
     </tr>
   <% end %>

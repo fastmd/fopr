@@ -1,7 +1,8 @@
 <div class="panel callout radius">
 <div class="field">
 	<div class="panel callout radius">
-    <center><h3><%= " 2.Лица подверженные риску" %></h3></center><br/>
+    <center><h1><%= " 3.Лица подверженные риску" %></h1></center><br/>
+    <center><h3>Указываются должности (профессии), задействованные на данном рабочем месте/рабочем посту при соответствующих видах рабочих операций.</h3></center>
     <div class="panel callout radius">
     <% @user.resps.each do |resp| %>
   		<p>
@@ -19,6 +20,6 @@
      	</div>
   </div>
   </div>
-  <%= link_to "Далее", next_wizard_path %>
+  <center><%= button_to "Далее", next_wizard_path, :class => "button", :method => :get  %></center>
   
   </div>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141015124555) do
+ActiveRecord::Schema.define(version: 20141021120844) do
 
   create_table "resps", force: true do |t|
     t.string   "name"
@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 20141015124555) do
     t.string   "lstand"
     t.string   "realst"
     t.string   "lrisk"
+    t.string   "org"
   end
 
   create_table "usrs", force: true do |t|

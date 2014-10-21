@@ -14,20 +14,20 @@
   <% end %>
 
   <div class="field">
-    <center><%= f.label :"Адрес электронной почты" %></center><br>
+    <center><h3><%= f.label :"Адрес электронной почты" %></h3></center><br>
     <%= f.text_field :email %>
   </div>
   <div class="field">
-    <center><%= f.label :"Пароль" %></center><br>
+    <center><h3><%= f.label :"Пароль" %></h3></center><br>
     <%= f.password_field :password %>
   </div>
   <div class="field">
-    <center><%= f.label :"потверждение пароля" %></center><br>
+    <center><h3><%= f.label :"потверждение пароля" %></h3></center><br>
     <%= f.password_field :password_confirmation %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Зарегестрироватся" %>
+    <center><%= f.submit "Зарегестрироватся", :class => "button" %></center>
   </div>
 <% end %>
 

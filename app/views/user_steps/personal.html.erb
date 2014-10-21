@@ -12,19 +12,22 @@
 </script>
 
 <div class="panel callout radius">
-<h1>Введите свои личные данные.</h1>
+<center><h1>Введите свои личные данные.</h1></center>
 
 <%= render layout: 'form' do |f| %>
+
+  	<center><h3><%= f.label :"Наименование организации" %></h3></center>
+    <center><%= f.text_field :org %></center>
   
-    <b><%= f.label :"ФИО" %></b><br>
-    <%= f.text_field :name %>
+    <center><h3><%= f.label :"ФИО" %></h3></center>
+    <center><%= f.text_field :name %></center>
   
-    <b><%= f.label :"Дата рождения" %></b><br>
+    <center><h3><%= f.label :"Дата рождения" %></h3></center>
     
-    <%= f.text_field :date_of_birth,:value => Time.now.strftime('%d.%m.%Y'),:id => "modelname" %>
+    <center><%= f.text_field :date_of_birth,:value => Time.now.strftime('%d.%m.%Y'),:id => "modelname" %></center>
     
-    <b><%= f.label :"Электронная почта" %></b><br>
-    <%= f.text_area :email, rows: 5 %>
+    <center><h3><%= f.label :"Электронная почта" %></h3></center>
+    <center><%= f.text_area :email, rows: 5 %></center>
   
 <% end %>
 
