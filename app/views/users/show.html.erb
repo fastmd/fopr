@@ -1,7 +1,16 @@
 <div class="row"> 
+	<style>
+	h4 
+{ 
+    display:inline; 
+} 
+	</style>
+	<center><h4><%= @user.org %></h4></center>
+	<center>(наименование организации)</center>
+	<br>	
 	<center><h3>Карточка</h3></center>
 	<center>
-	 	по оценке профессиональных рисков
+	 	<strong>оценки профессиональных рисков</strong>
 	</center>
 	
 	<br><br>
@@ -71,20 +80,25 @@
     	<% @u = @user.risks.find(rc.risk_id) %>
     	<td><%= @u.risk %></td>
     	<% 
-    	  ind = rc.rver.to_i + rc.rposl.to_i
-    		    
+    	  
+    		if ( (rc.rver.to_i == 2) and (rc.rposl.to_i == 5))
+    			ind = (rc.rver.to_i + rc.rposl.to_i + 1)
+    		else
+    			ind = (rc.rver.to_i + rc.rposl.to_i)
+    		end		   
     	    case ind
 				when 1 .. 3
-    				s =	"Незначительный риск" + " (" + ind.to_s() + ")" 
+    				s =	"Незначительный риск" + " (1)" 
 				when 4 .. 5
-    				s = "Приемлемый риск" + " (" + ind.to_s() + ")"
+    				s = "Приемлемый риск" + " (2)"
 				when 6 .. 7
-    				s = "Терпимый риск" + " (" + ind.to_s() + ")"
+    				s = "Терпимый риск" + " (3)"	
 				when 8 .. 9
-    				s = "Значительный риск" + " (" + ind.to_s() + ")"
+    				s = "Значительный риск" + " (4)"
 				else
-    				s = "Недопустимый риск" + " (" + ind.to_s() + ")"
+    				s = "Недопустимый риск" + " (5)"
 			end	
+		 	
     	 %>
     	 <% 
     	  ind1 = rc.rver.to_i 
@@ -126,14 +140,24 @@
 	  <% end %>
 	  </tbody>
  	</table>
+ </div>
+ 
+ <div class="row">
+  <div class="small-2 large-4 columns">
+  	<strong> Оценку провел : </strong><br><br>
+  	<%= @user.name+'  ______________'%>
+  </div>
+  <div class="small-4 large-4 columns"></div>
+  <div class="small-6 large-4 columns">
+  	<strong>	С оценкой ознакомленны : </strong>
+				<br><br>
+				<% @user.resps.each do |resp| %>
+    				<%= resp.name+'  ______________'%>   
+    				<br> <br> <br> 
+    			<% end %>
+  </div>
  </div>	
  
- <div>
-        <strong>	Оценку выполнил : </strong><br>
-				<% @user.resps.each do |resp| %>
-    				<%= resp.name %>   ____________________________
-    				<br> 
-    			<% end %>
-    </div>
+
  
 </div>

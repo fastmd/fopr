@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   
   attr_accessible :bio, :date_of_birth, :email, :github_username, :name, :password, :password_confirmation, :twitter_username, :website, 
-  :rabm, :oprab, :hlist, :lstand, :realst, :lrisk, :risk_ids, :rver, :rposl
+  :rabm, :oprab, :hlist, :lstand, :realst, :lrisk, :risk_ids, :rver, :rposl, :org
   has_secure_password
   
   has_many :resps

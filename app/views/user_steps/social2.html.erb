@@ -37,7 +37,11 @@ height: 30px;
       <td><%= risk.rtype %></td>	
       <td><%= risk.risk %></td>
       <td><%= risk.result %></td>
-      <td><%= check_box_tag "user[risk_ids][]", risk.id, @user.risk_ids.include?(risk.id), id: dom_id(risk),:class => "css_class" %> </td>
+      <td>
+      	
+  		<%= check_box_tag "user[risk_ids][]", risk.id, @user.risk_ids.include?(risk.id), id: dom_id(risk) %> 
+		
+      </td>
       <% label_tag dom_id(risk), risk.risk %>
     </tr>
   <% end %>
