@@ -14,7 +14,7 @@
 
   <div class="field">
     <%= f.label :"Тип риска"%><br />
-    <%= f.text_field :rtype %>
+    <%= f.text_field :rtype, :input_html => {:maxlength => 3, :size => 40} %>
   </div>
   <div class="field">
     <%= f.label :"Наименование риска" %><br />
