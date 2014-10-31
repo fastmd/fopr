@@ -10,19 +10,20 @@ height: 30px;
 
 
 <%= render layout: 'form' do |f| %>
-  <center><h1>III.Реестр рисков</h1></center>
-<center><p>1:Факторы, вызывающие опасность травмирования или вред здоровью работника (-ов) при 
+  <center><h3>Реестр рисков</h3></center>
+<center><p>Факторы, вызывающие опасность травмирования или вред здоровью работника (-ов) при 
 	выполнении перечисленных конкретных рабочих действий, применяемого рабочего оборудования,
 	 приспособлений и материалов и предполагающие необходимость оценки степени риска</p></center>
+<center><p>Выявленные риски выделяются галочкой в графе "Наличие"</p></center>	 
 
 <br>
 <table id="table1">
 	<thead>
   <tr>
   	<th>№ </th>
-    <th> <center>Тип риска</center></th>
+    <th> <center>Факторы опасности</center></th>
     <th> <center>Наименование риска</center></th>
-    <th> <center>Последствия</center></th>
+    <th> <center>Возможные последствия</center></th>
     <th> <center>Наличие</center></th>   
   </tr>
  </thead>
@@ -39,7 +40,7 @@ height: 30px;
       <td><%= risk.result %></td>
       <td>
       	
-  		<%= check_box_tag "user[risk_ids][]", risk.id, @user.risk_ids.include?(risk.id), id: dom_id(risk) %> 
+  		<center><%= check_box_tag "user[risk_ids][]", risk.id, @user.risk_ids.include?(risk.id), id: dom_id(risk),:style => "width: 25px; height: 25px;"  %></center> 
 		
       </td>
       <% label_tag dom_id(risk), risk.risk %>
