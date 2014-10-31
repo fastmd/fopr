@@ -97,15 +97,15 @@
 
   </div>
 </div>
-
+</div>
 
 
 <%= form_for :riskizations, :url => {:action => 'update_rzs'} do %>
-	<center><table>
+	<center><table border="1">
 		<tr>
 		<th>№</th>
 		<th>Наименование риска</th>
-		<th>Вероятность</th>
+		<th> Вероятность </th>
 		<th>Последствия</th>
 		</tr>
 		<% i=0%>
@@ -129,6 +129,7 @@
 	<center><%= submit_tag 'Далее' , :class => "button"%></center>
 <% end %>
 
-</div>
+
+
 
 

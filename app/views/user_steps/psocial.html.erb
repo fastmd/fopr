@@ -1,23 +1,48 @@
 <div class="panel callout radius">
 <div class="field">
 	<div class="panel callout radius">
-    <center><h3><%= " 3.Лица подверженные риску" %></h3></center><br/>
-    <center><p>Указываются должности (профессии), задействованные на данном рабочем месте/рабочем посту при соответствующих видах рабочих операций.</p></center>
+		<div class="row">
+  	<center><h3><%= " 3.Лица подверженные риску" %></h3></center><br/>
+    <center><p>Указываются должности (профессии), задействованные на данном
+    	 рабочем месте/рабочем посту при соответствующих видах рабочих операций.</p></center>
+    
+  <div class="large-8 large-push-4 columns">  
     <div class="panel callout radius">
-    <% @user.resps.each do |resp| %>
-  		<p>
-    		<strong>ФИО:</strong>
-    		<%= resp.name %>
-  		</p>
+  <table id="table1">
+  <thead>
+  <tr>
+  	<th>№ </th>
+    <th> ФИО (фамилия, имя, отчество респондента)</th>   
+  </tr>
+ </thead>
  
+ <tbody>
+ <% i=0 %>	
+ <% @user.resps.each do |resp| %>
+  		 <% i = i + 1%>
+  		<tr>	 
+    		<td><strong><%= i %></strong></td>
+    		<td><%= resp.name %></td>
+    	</tr>	
 	<% end %>
+	
+  </tbody>
+</table>
+    
 	</div>
-<div class="panel callout radius">     	
+	</div>
+  <div class="large-4 large-pull-8 columns">
+  	<div class="panel callout radius">     	
 			<%= form_for([@user, @user.resps.build]) do |ff| %>
+				<a>Введите ФИО (фамилия, имя, отчество респондента)</a>
   				<p> <%= ff.text_field :name %> </p>
+  				
     			<%= ff.submit "Добавить респондента" %>
   			<% end %>
      	</div>
+  </div>
+</div>
+    
   </div>
   </div>
   <center><%= button_to "Далее", next_wizard_path, :class => "button", :method => :get  %></center>
