@@ -40,11 +40,15 @@
     		    ind1 = riskization.rver.to_i + riskization.rposl.to_i
     	    	case ind1
 				   when 1 .. 3 %>
-    					<td> <%= riskization_fields.text_area :mpred , :cols => 40, :rows => 40, :value => "Риск мал и управляем. Специальные меры предупреждения не требуются."%> </td>
+    					<td> <%= riskization_fields.text_area :mpred , :cols => 40, :rows => 40, :value => 
+    					"Риск мал и управляем. Специальные меры предупреждения не требуются."%> </td>
 				<% when 4 .. 5 %>
-	    				<td> <%= riskization_fields.text_area :mpred , :cols => 40, :rows => 40,:value => "Специальные меры предупреждения не требуются. Риск нужно контролировать."%> </td>
+	    				<td> <%= riskization_fields.text_area :mpred , :cols => 40, :rows => 40,:value => 
+	    				"Специальные меры предупреждения не требуются. Риск нужно контролировать."%> </td>
 				<% else %>
-    					 <td> <%= riskization_fields.text_area :mpred, :cols => 40, :rows => 40 %> </td> 
+    					 <td> <%= riskization_fields.text_area :mpred, :cols => 40, :rows => 40,:value => "Обязательно для ввода!" %>  
+    					 		 
+    					 </td> 
     			<% end %>	
     	 						
 				<% session[:st] = 2 %>

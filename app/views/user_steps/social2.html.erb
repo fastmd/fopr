@@ -1,3 +1,4 @@
+
 <style type="text/css">
 input.css_class
 {
@@ -6,9 +7,8 @@ height: 30px;
 }
 </style> 
 
+
 <div class="panel callout radius">
-
-
 <%= render layout: 'form' do |f| %>
   <center><h3>Реестр рисков</h3></center>
 <center><p>Факторы, вызывающие опасность травмирования или вред здоровью работника (-ов) при 
@@ -17,7 +17,7 @@ height: 30px;
 <center><p>Выявленные риски выделяются галочкой в графе "Наличие"</p></center>	 
 
 <br>
-<table id="table1" border="1">
+<table border="1">
 	<thead>
   <tr>
   	<th>№ </th>
@@ -28,7 +28,17 @@ height: 30px;
   </tr>
  </thead>
  
- <tbody>
+ <tfoot>
+	<tr>
+	  <td>№</td>
+	  <td><center>Факторы опасности</center></td>
+	  <td><center>Наименование риска</center></td>
+	  <td><center>Возможные последствия</center></td>
+	  <td><center>Наличие</center></td>
+	</tr>
+  </tfoot>
+ 
+ <tbody >
  <%i = 0%>
  <%= hidden_field_tag "user[risk_ids][]", nil %>
   <% Risk.all.each do |risk| %>
@@ -47,12 +57,11 @@ height: 30px;
     </tr>
   <% end %>
   </tbody>
+ 
 </table>
-
-  
 <% end %>
 
 
 
-</div>
+
 
